@@ -1,6 +1,13 @@
+const Course = require('../models/Course');
+
 class NewsController {
-  index(req, res) {
-    res.send('home');
+
+  async index(req, res) {
+    const Courses = await Course.find();
+    res.status(200).send({
+      status: 'Success',
+      data: Courses,
+    })
   }
 
   search(req, res) {

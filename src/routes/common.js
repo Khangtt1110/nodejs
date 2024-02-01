@@ -3,8 +3,8 @@ const router = express.Router();
 
 const commonController = require('../app/controllers/CommonController');
 
-router.use('/', commonController.index);
+router.get('/', commonController.index);
 
-router.use('/search', commonController.search);
+router.get('/search', commonController.search);
 
 module.exports = router;
